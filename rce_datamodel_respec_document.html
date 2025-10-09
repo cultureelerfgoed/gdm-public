@@ -182,16 +182,122 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
   </aside>
 </section>
 
+  <section id="status-model">
+  <h2>Status van het model</h2>
+  <p>
+    Dit document beschrijft versie <strong>0.5</strong> van het onderliggende datamodel van de 
+    <strong>Rijksdienst voor het Cultureel Erfgoed (RCE)</strong>. 
+    Voor meer informatie over het datamodel en de bijbehorende resources, zie: 
+    <em>RCE Datamodel 0.5</em>.
+  </p>
 
-    <section id="hoofdstuk2">
-      <h2>Status van het model</h2>
-      <p>
-        Dit document beschrijft versie <strong>0.5</strong> van het onderliggende datamodel 
-        van de Rijksdienst voor het Cultureel Erfgoed (RCE). 
-        Voor meer informatie over het datamodel en de bijbehorende resources, zie: 
-        <a href="https://cultureelerfgoed.github.io/RCE-datamodel/">RCE Datamodel 0.5</a>.
-      </p>
-    </section>
+  <div style="border-left:4px solid #d9534f; background-color:#f9f2f4; padding:10px 15px; margin-top:1em;">
+    <strong>Disclaimer</strong><br>
+    De inhoud van dit document is conceptueel van aard. 
+    Alle beschreven modellen, definities en relaties bevinden zich nog in de ontwerpfase 
+    en zijn nog niet formeel vastgesteld door de 
+    <strong>Rijksdienst voor het Cultureel Erfgoed (RCE)</strong>.<br><br>
+    De inhoud kan nog worden gewijzigd op basis van voortschrijdend inzicht, 
+    afstemming met domeinexperts en verdere validatie van het model.
+  </div>
+</section>
+
+<section id="business-rules">
+  <h2>Business Rules</h2>
+
+  <p>
+    Binnen het <strong>RCE-datamodel</strong> zorgen business rules voor eenduidigheid, 
+    kwaliteit en herleidbaarheid van gegevens. 
+    Ze definiëren de belangrijkste ontwerpprincipes en logische relaties tussen objecten, 
+    attributen en domeinen. De onderstaande regels geven richting aan de implementatie 
+    van datamodellering, validatie en informatiebeheer binnen het cultureel-erfgoeddomein.
+  </p>
+
+  <table style="width:130%; border-collapse: collapse; margin-top: 1em; border:1px solid #ccc;">
+    <thead style="background-color:#f0f4f8;">
+      <tr>
+        <th style="border:1px solid #ccc; padding:8px;">Nr.</th>
+        <th style="border:1px solid #ccc; padding:8px;">Business Rule</th>
+        <th style="border:1px solid #ccc; padding:8px;">Toepassing / Object</th>
+        <th style="border:1px solid #ccc; padding:8px;">Laag / Categorie</th>
+        <th style="border:1px solid #ccc; padding:8px;">Waarom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">1</td>
+        <td style="border:1px solid #ccc; padding:8px;">Alle gecontroleerde waarden en classificaties moeten worden vastgelegd via gestandaardiseerde referentiewaarden.</td>
+        <td style="border:1px solid #ccc; padding:8px;">Referentielijsten</td>
+        <td style="border:1px solid #ccc; padding:8px;">Begrippen / Validatie</td>
+        <td style="border:1px solid #ccc; padding:8px;">Om consistentie, interoperabiliteit en betrouwbare analyse te waarborgen.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">2</td>
+        <td style="border:1px solid #ccc; padding:8px;">Objecten kunnen een vertrouwelijkheidsniveau bevatten.</td>
+        <td style="border:1px solid #ccc; padding:8px;">CHO</td>
+        <td style="border:1px solid #ccc; padding:8px;">Object / Aspect</td>
+        <td style="border:1px solid #ccc; padding:8px;">Om de toegang tot gevoelige gegevens te reguleren en publicatie te beheersen.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">3</td>
+        <td style="border:1px solid #ccc; padding:8px;">Objecten kunnen unieke of internationale identificatoren hebben.</td>
+        <td style="border:1px solid #ccc; padding:8px;">CHO</td>
+        <td style="border:1px solid #ccc; padding:8px;">Object / Aspect</td>
+        <td style="border:1px solid #ccc; padding:8px;">Voor eenduidige herkenning, registratie en traceerbaarheid binnen nationale en internationale contexten.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">4</td>
+        <td style="border:1px solid #ccc; padding:8px;">Objecten en registraties kunnen meerdere zienswijzen of historische interpretaties bevatten.</td>
+        <td style="border:1px solid #ccc; padding:8px;">CHO / Registratie</td>
+        <td style="border:1px solid #ccc; padding:8px;">Provenance</td>
+        <td style="border:1px solid #ccc; padding:8px;">Om veranderingen in kennis of waardering door de tijd te documenteren, inclusief geldigheid, melder, norm en formeel standpunt.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">5</td>
+        <td style="border:1px solid #ccc; padding:8px;">Het model ondersteunt hiërarchische en associatieve relaties tussen objecten.</td>
+        <td style="border:1px solid #ccc; padding:8px;">Alle objecten</td>
+        <td style="border:1px solid #ccc; padding:8px;">Relatie / Hiërarchie</td>
+        <td style="border:1px solid #ccc; padding:8px;">Om context, samenhang en provenance te behouden.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">6</td>
+        <td style="border:1px solid #ccc; padding:8px;">Objecten moeten relevante kenmerken bevatten zoals omvang, status, type, functie, datering en andere contextuele eigenschappen.</td>
+        <td style="border:1px solid #ccc; padding:8px;">Alle objecten</td>
+        <td style="border:1px solid #ccc; padding:8px;">Object / Aspect</td>
+        <td style="border:1px solid #ccc; padding:8px;">Voor een volledige beschrijving en analyse.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">7</td>
+        <td style="border:1px solid #ccc; padding:8px;">Alle objecten en waarnemingen moeten gekoppeld kunnen worden aan hun context, herkomst, locatie en eventuele onderzoeksactiviteit.</td>
+        <td style="border:1px solid #ccc; padding:8px;">Alle objecten / Waarnemingen</td>
+        <td style="border:1px solid #ccc; padding:8px;">Relatie / Provenance</td>
+        <td style="border:1px solid #ccc; padding:8px;">Om (wetenschappelijke) reproduceerbaarheid te garanderen.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">8</td>
+        <td style="border:1px solid #ccc; padding:8px;">Gebeurtenissen kunnen gekoppeld worden aan betrokken personen, instanties en datering.</td>
+        <td style="border:1px solid #ccc; padding:8px;">Gebeurtenissen / Registratie</td>
+        <td style="border:1px solid #ccc; padding:8px;">Tijd / Aspect</td>
+        <td style="border:1px solid #ccc; padding:8px;">Om rollen, processen en historische context binnen het erfgoed te kunnen reconstrueren.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">9</td>
+        <td style="border:1px solid #ccc; padding:8px;">Alle geografische gegevens moeten via punt- of polygooncoördinaten aan geometrie zijn gekoppeld.</td>
+        <td style="border:1px solid #ccc; padding:8px;">Geometrie</td>
+        <td style="border:1px solid #ccc; padding:8px;">Aspect / Geometrie</td>
+        <td style="border:1px solid #ccc; padding:8px;">Zodat ruimtelijke analyses en GIS-toepassingen mogelijk zijn.</td>
+      </tr>
+      <tr>
+        <td style="border:1px solid #ccc; padding:8px;">10</td>
+        <td style="border:1px solid #ccc; padding:8px;">Tekstuele, visuele of audiovisuele objecten kunnen gekoppeld zijn aan specifieke erfgoedobjecten of zelfstandig aan algemene thema’s.</td>
+        <td style="border:1px solid #ccc; padding:8px;">Tekst / Visueel / Audio</td>
+        <td style="border:1px solid #ccc; padding:8px;">Object / Relatie</td>
+        <td style="border:1px solid #ccc; padding:8px;">Om kenniscontext en interpretaties in publicaties te verbinden.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
     <section id="hoofdstuk3">
   <h2>Genealogie van het model</h2>
   <p>In dit hoofdstuk wordt de ontstaansgeschiedenis van het model uiteengezet.</p>
@@ -463,7 +569,6 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
   
   <p>Er zijn twee typen te onderscheiden:</p>
 
-  <h4>Type 1: concreet moment of exact afgebakend tijdvak</h4>
   <p>Type 1 geeft een specifiek moment of een duidelijk begrensd tijdvak aan. Dit kan een enkele datum of jaar zijn of een kort tijdvak met begin- en einddatum.</p>
   <aside class="toelichting">
       <div class="toelichting-title"></div>
@@ -480,7 +585,6 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
       </figure>
     </aside>
 
-  <h4>Type 2: brede historische periode</h4>
   <p>Type 2 verwijst naar een bredere historische periode. Deze periode kan globaal worden aangeduid, eventueel met een begin- en einddatum.</p>
 
     <aside class="toelichting">
@@ -562,6 +666,68 @@ Het RCE datamodel is ontwikkeld om de data van de organisatie en de betekenis (s
   <h3>Provenance</h3>
    <p>Hier wordt vastgelegd wat de bron van de informatie/data is, hoe betrouwbaar deze is en binnen welke periode de informatie geldig is.</p><p>Properties die hierbij horen zijn:
   melder, voorganger, formeel_standpunt, observatie_datum, is_volgens_norm, geldigheid.</p>
+  </section>
+</section>
+
+<section id="zienswijzen">
+  <h2>Zienswijze</h2>
+
+  <p>
+    Binnen het <strong>RCE-datamodel</strong> wordt het begrip <strong>zienswijze</strong> gebruikt om een interpretatie of waarneming van een archeologisch object vast te leggen. 
+    Elke zienswijze wordt gemodelleerd als een afzonderlijke <strong>registratie</strong> die gekoppeld is aan het betreffende object of typeobject.
+  </p>
+
+    <p>
+      Een zienswijze kan de volgende attributen bevatten:
+    </p>
+    <ul>
+      <li><strong>Begin- en eindgeldigheid</strong> <span class="toelichting-text">(bijvoorbeeld 2020-01-01, 2023-12-31)</span></li>
+      <li><strong>Observatiedatum</strong> <span class="toelichting-text">(bijvoorbeeld specialist x, RCE-inventarisatie)</span></li>
+      <li><strong>Melder</strong> <span class="toelichting-text">(bijvoorbeeld specialist x, RCE-inventarisatie</span></li>
+      <li><strong>Is volgens norm</strong> <span class="toelichting-text">(bijvoorbeeld Kwaliteitsnorm Nederlandse Archeologie)</span></li>
+      <li><strong>Formeel standpunt (RCE)</strong> <span class="toelichting-text">(bijvoorbeeld ja/nee)</span></li>
+    </ul>
+
+    <aside class="toelichting">
+      <div class="toelichting-title">Voorbeeld</div>
+      <p>
+        Een Romeinse pot kan als 'compleet' zijn geregistreerd door archeoloog X in 2020 volgens de RCE-norm, 
+        terwijl een herbeoordeling in 2023 dezelfde pot als 'fragmentarisch' classificeert. 
+        Beide zienswijzen worden apart vastgelegd met bron- en geldigheidsinformatie.
+      </p>
+    </aside>
+
+  <section id="zienswijze-tijd-context">
+    <h3>Historische context</h3>
+    <p>
+      Door <strong>begingeldigheids-</strong> en <strong>eindgeldigheidsdatum</strong> vast te leggen, kunnen meerdere zienswijzen over hetzelfde object of kenmerk naast elkaar bestaan. 
+      Zo ontstaat een historisch overzicht van interpretaties.
+    </p>
+    <p>
+      Dit maakt het mogelijk om analyses te maken van veranderingen in waarderingen, interpretaties of beschrijvingen van archeologische objecten over de tijd.
+    </p>
+  </section>
+
+  <section id="zienswijze-provenance">
+    <h3>Herleidbaar</h3>
+    <p>
+      Elke zienswijze is voorzien van <strong>provenance-informatie</strong>, zodat duidelijk is wie de informatie heeft geregistreerd 
+      en welke normatieve of formele status eraan verbonden is.
+    </p>
+    <p>
+      Hierdoor wordt zowel interne herleidbaarheid als externe verificatie van gegevens binnen het RCE-datamodel gewaarborgd.
+    </p>
+  </section>
+
+  <section id="zienswijze-niveau">
+    <h3>Niveaus</h3>
+    <p>
+      Zienswijzen kunnen op verschillende niveaus worden vastgelegd:
+    </p>
+    <ul>
+      <li><strong>Objectniveau</strong>: het gehele object heeft een bepaalde zienswijze <span class="toelichting-text">, bijvoorbeeld een middeleeuwse kruik als compleet geregistreerd.</span></li>
+      <li><strong>Kenmerkniveau</strong>: specifieke eigenschappen uit kennisregistratie van een object kunnen afzonderlijke zienswijzen hebben<span class="toelichting-text">, bijvoorbeeld staat van conservering.</span></li>
+    </ul>
   </section>
 </section>
 
